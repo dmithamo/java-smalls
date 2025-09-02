@@ -23,7 +23,7 @@ public class ToBinary {
 
     while (pos > -1) {
       double posValue = Math.pow(2, pos);
-      if ((valueOfBin + posValue) > decimal) {
+      if ((valueOfBin + posValue) > Math.abs(decimal)) {
         System.out.print(0);
       } else {
         System.out.print(1);
