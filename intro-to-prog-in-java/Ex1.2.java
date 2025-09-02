@@ -2,7 +2,7 @@
 Introduction to Programming in Java 2nd Edition.pdf
 */
 
-public class ExercisesCh1 {
+public class Ex12 {
   public static void main(String[] args) {
     // Ex122.main(args);
     // Ex123.main(args);
