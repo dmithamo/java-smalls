@@ -1,5 +1,8 @@
 public class Ex13 {
-  public static void main(String[] args) { ToBinary.main(args); }
+  public static void main(String[] args) {
+    // ToBinary.main(args);
+    PrimeFactors.main(args);
+  }
 }
 
 /*
@@ -43,5 +46,28 @@ class ToBinary {
       pos -= 1;
     }
     return theBinary;
+  }
+}
+
+/*
+ * PrimeFactors (My impln of PROGRAM 1.3.9) computes the prime factorization of
+any given positive integer
+ * */
+class PrimeFactors {
+  public static void main(String[] args) {
+    long n = Long.parseLong(args[0]);
+    String factors = "";
+
+    for (long i = 2; i <= n; i++) {
+      while (n % i == 0) {
+        if (n / i > 1) {
+          factors += i + " x ";
+        } else {
+          factors += i;
+        }
+        n /= i;
+      }
+    }
+    System.out.println(factors);
   }
 }
