@@ -58,15 +58,17 @@ class PrimeFactors {
     long n = Long.parseLong(args[0]);
     String factors = "";
 
-    for (long i = 2; i <= n; i++) {
+    for (long i = 2; i * i <= n; i++) {
       while (n % i == 0) {
         if (n / i > 1) {
           factors += i + " x ";
-        } else {
-          factors += i;
+          n /= i;
         }
-        n /= i;
       }
+    }
+
+    if (n > 1) {
+      factors += n;
     }
     System.out.println(factors);
   }
