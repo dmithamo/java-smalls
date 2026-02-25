@@ -59,16 +59,30 @@ class PrimeFactors {
     String factors = "";
 
     for (long i = 2; i * i <= n; i++) {
+      int count = 0;
       while (n % i == 0) {
-        if (n / i > 1) {
-          factors += i + " x ";
-          n /= i;
+        count++;
+        n /= i;
+      }
+
+      if (count > 0) {
+        if (factors != "") {
+          factors += " x " + i;
+        } else {
+          factors += i;
+        }
+        if (count > 1) {
+          factors += "^" + count;
         }
       }
     }
 
     if (n > 1) {
-      factors += n;
+      if (factors != "") {
+        factors += " x " + n;
+      } else {
+        factors += n;
+      }
     }
     System.out.println(factors);
   }
