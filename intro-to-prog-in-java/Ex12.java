@@ -4,6 +4,7 @@ Introduction to Programming in Java 2nd Edition.pdf
 
 public class Ex12 {
   public static void main(String[] args) {
+    // System.out.println(Math.round(6.022e23));
     // Ex122.main(args);
     // Ex123.main(args);
     // Ex129.main(args);
