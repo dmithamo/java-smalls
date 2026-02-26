@@ -1,6 +1,23 @@
 void main(String[] args) {
   // ToBinary.main(args);
-  primeFactorise(args);
+  // primeFactorise(args);
+  printInts();
+}
+
+/*
+ * Ex 1.3.9 Write a program that, using one for loop and one if statement,
+ * prints the
+ * integers from 1,000 to 2,000 with five integers per line. Hint: Use the %
+ * operation.
+ */
+
+void printInts() {
+  for (int i = 1000; i <= 2000; i++) {
+    IO.print(i + " ");
+    if (i % 5 == 0) {
+      IO.println();
+    }
+  }
 }
 
 /*
