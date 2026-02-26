@@ -1,9 +1,57 @@
-public class Ex13 {
-  void main(String[] args) {
-    // ToBinary.main(args);
-    PrimeFactors p = new PrimeFactors();
-    p.main(args);
+void main(String[] args) {
+  // ToBinary.main(args);
+  primeFactorise(args);
+}
+
+/*
+ * primeFactorise (My impln of PROGRAM 1.3.9) computes the prime factorization
+ * of
+ * any given positive integer
+ */
+void primeFactorise(String[] args) {
+  long n = Long.parseLong(args[0]);
+  String factors = "";
+
+  // is 2 a factor?
+  int countTwos = 0;
+  while (n % 2 == 0) {
+    countTwos++;
+    n /= 2;
   }
+
+  if (countTwos > 1) {
+    factors += "2^" + countTwos;
+  } else if (countTwos == 1) {
+    factors += "2";
+  }
+
+  for (long i = 3; i * i <= n; i += 2) {
+    int count = 0;
+    while (n % i == 0) {
+      count++;
+      n /= i;
+    }
+
+    if (count > 0) {
+      if (factors != "") {
+        factors += " x " + i;
+      } else {
+        factors += i;
+      }
+      if (count > 1) {
+        factors += "^" + count;
+      }
+    }
+  }
+
+  if (n > 1) {
+    if (factors != "") {
+      factors += " x " + n;
+    } else {
+      factors += n;
+    }
+  }
+  IO.println(factors);
 }
 
 /*
@@ -42,62 +90,10 @@ class ToBinary {
         theBinary += "0";
       } else {
         theBinary += "1";
-        valueOfBin += (int) posValue;
+        valueOfBin += (int)posValue;
       }
       pos -= 1;
     }
     return theBinary;
-  }
-}
-
-/*
- * PrimeFactors (My impln of PROGRAM 1.3.9) computes the prime factorization of
- * any given positive integer
- */
-class PrimeFactors {
-  void main(String[] args) {
-    long n = Long.parseLong(args[0]);
-    String factors = "";
-
-    // is 2 a factor?
-    int countTwos = 0;
-    while (n % 2 == 0) {
-      countTwos++;
-      n /= 2;
-    }
-
-    if (countTwos > 1) {
-      factors += "2^" + countTwos;
-    } else if (countTwos == 1) {
-      factors += "2";
-    }
-
-    for (long i = 3; i * i <= n; i += 2) {
-      int count = 0;
-      while (n % i == 0) {
-        count++;
-        n /= i;
-      }
-
-      if (count > 0) {
-        if (factors != "") {
-          factors += " x " + i;
-        } else {
-          factors += i;
-        }
-        if (count > 1) {
-          factors += "^" + count;
-        }
-      }
-    }
-
-    if (n > 1) {
-      if (factors != "") {
-        factors += " x " + n;
-      } else {
-        factors += n;
-      }
-    }
-    IO.println(factors);
   }
 }
