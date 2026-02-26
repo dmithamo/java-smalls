@@ -58,7 +58,20 @@ class PrimeFactors {
     long n = Long.parseLong(args[0]);
     String factors = "";
 
-    for (long i = 2; i * i <= n; i++) {
+    // is 2 a factor?
+    int countTwos = 0;
+    while (n % 2 == 0) {
+      countTwos++;
+      n /= 2;
+    }
+
+    if (countTwos > 1) {
+      factors += "2^" + countTwos;
+    } else if (countTwos == 1) {
+      factors += "2";
+    }
+
+    for (long i = 3; i * i <= n; i += 2) {
       int count = 0;
       while (n % i == 0) {
         count++;
