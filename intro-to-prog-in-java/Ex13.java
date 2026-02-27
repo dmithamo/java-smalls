@@ -12,7 +12,7 @@ void main(String[] args) {
  */
 
 void printInts() {
-  for (int i = 1000; i <= 2000; i++) {
+  for (int i = 1000; i <= 5000; i++) {
     IO.print(i + " ");
     if (i % 5 == 0) {
       IO.println();
@@ -107,7 +107,7 @@ class ToBinary {
         theBinary += "0";
       } else {
         theBinary += "1";
-        valueOfBin += (int)posValue;
+        valueOfBin += (int) posValue;
       }
       pos -= 1;
     }
