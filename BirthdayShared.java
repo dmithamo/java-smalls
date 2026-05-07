@@ -24,7 +24,7 @@ public class BirthdayShared {
             popSize,
             numOfTrials
         );
-        System.out.println(
+        System.out.println(`
             "Chances: %.15f".formatted(
                 (double) numOfTrialsWithSharedBday / numOfTrials
             )
