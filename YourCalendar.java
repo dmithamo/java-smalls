@@ -1,6 +1,3 @@
-import java.time.LocalDate;
-import java.time.Month;
-
 /**
  * Print out the days of the current calendar month
  * Optionally accept a year, month and date as ordered args
@@ -37,7 +34,7 @@ void main(String[] args) {
   int countPrinted = 0;
 
   for (int i = 1; i < firstOfMonth.getDayOfWeek().getValue(); i++) {
-    IO.print("    ");
+    IO.print("%4s".formatted(" "));
     countPrinted += 1;
   }
 
