@@ -24,8 +24,13 @@ void main() {
   // ComputeAverage avgCalc = new ComputeAverage();
   // avgCalc.computeAvg();
 
-  FakeC c = new FakeC();
-  c.checkVars();
+  // FakeC c = new FakeC();
+  // c.checkVars();
+
+  for (int i = 0; i < 10; i++) {
+    User a = new User("User %d".formatted(i));
+    System.out.println(a.getIdentity());
+  }
 }
 
 class ComputeAverage {
@@ -62,5 +67,21 @@ class FakeC {
 
   public void checkVars() {
     System.out.println(age);
+  }
+}
+
+class User {
+  private int userID;
+  private String username;
+  private static int nextID = 0;
+
+  public User(String n) {
+    username = n;
+    nextID++;
+    userID = nextID;
+  }
+
+  public String getIdentity() {
+    return "[%d] %s".formatted(userID, username);
   }
 }
