@@ -21,8 +21,11 @@ void main() {
 
   // IO.println("Divisors: " + divisorCount);
 
-  ComputeAverage avgCalc = new ComputeAverage();
-  avgCalc.computeAvg();
+  // ComputeAverage avgCalc = new ComputeAverage();
+  // avgCalc.computeAvg();
+
+  FakeC c = new FakeC();
+  c.checkVars();
 }
 
 class ComputeAverage {
@@ -51,5 +54,13 @@ class ComputeAverage {
         IO.println("Invalid number. Enter another");
       }
     }
+  }
+}
+
+class FakeC {
+  int age;
+
+  public void checkVars() {
+    System.out.println(age);
   }
 }
