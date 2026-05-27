@@ -73,7 +73,7 @@ class FakeC {
 class User {
   private int userID;
   private String username;
-  private static int nextID = 0;
+  private static int nextID;
 
   public User(String n) {
     username = n;
