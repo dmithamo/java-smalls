@@ -27,10 +27,13 @@ void main() {
   // FakeC c = new FakeC();
   // c.checkVars();
 
-  for (int i = 0; i < 10; i++) {
-    User a = new User("User %d".formatted(i));
-    System.out.println(a.getIdentity());
-  }
+  // for (int i = 0; i < 10; i++) {
+  // User a = new User("User %d".formatted(i));
+  // System.out.println(a.getIdentity());
+  // }
+
+  StaticMethodsPractive.cube(10);
+
 }
 
 class ComputeAverage {
@@ -83,5 +86,14 @@ class User {
 
   public String getIdentity() {
     return "[%d] %s".formatted(userID, username);
+  }
+}
+
+class StaticMethodsPractive {
+  public static void cube(int i) {
+    i = i * i * i;
+
+    System.out.println("%d".formatted(i));
+
   }
 }
