@@ -4,6 +4,7 @@ public class SedgewickIntroJava {
 
     for (int i = 0; i <= 92; i++) {
       System.out.println("DynamicProgrammingFib.fib(%d) =  %d".formatted(i, DynamicProgrammingFib.fib(i)));
+      System.out.println("DynamicProgrammingFib.fibToo(%d) =  %d".formatted(i, DynamicProgrammingFib.fibToo(i)));
     }
   }
 
@@ -40,6 +41,21 @@ public class SedgewickIntroJava {
 
       cache[n - 1] = fib(n - 1) + fib(n - 2);
       return cache[n - 1];
+    }
+
+    public static long fibToo(int n) {
+      if (n <= 0)
+        return 0;
+
+      long[] cache = new long[n + 1];
+      cache[0] = 0;
+      cache[1] = 1;
+
+      for (int i = 2; i <= n; i++) {
+        cache[i] = cache[i - 1] + cache[i - 2];
+      }
+
+      return cache[n];
     }
   }
 }
