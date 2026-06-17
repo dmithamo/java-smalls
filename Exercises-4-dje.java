@@ -1,6 +1,6 @@
 class Exercises4DJE {
   public static void main(String[] args) {
-    String input = IO.readln();
+    String input = IO.readln("Enter the sentence\n");
     String capitalised = capitalise(input);
     System.out.println("%s -> %s".formatted(input, capitalised));
   }

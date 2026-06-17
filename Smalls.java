@@ -75,8 +75,8 @@ class User {
   private String username;
   private static int nextID;
 
-  public User(String n) {
-    username = n;
+  public User(String username) {
+    this.username = username;
     nextID++;
     userID = nextID;
   }
